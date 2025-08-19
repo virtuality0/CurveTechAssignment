@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String    @id @default(cuid())
+  name        String
+  email       String    @unique()
+  password    String?
+  role        UserRole
+  created_at  DateTime  @default(now())
+  modified_at DateTime?
+  devices     Device[]
+}
+
+model Device {
+  id             String       @id @default(cuid())
+  name           String
+  type           DeviceType
+  status         DeviceStatus
+  owner_id       String
+  user           User         @relation(fields: [owner_id], references: [id])
+  last_active_at DateTime     @default(now())
+  logs           Log[]
+
+  @@unique([name, type, owner_id])
+}
+
+model Log {
+  id        String   @id @default(cuid())
+  event     String
+  value     String?
+  timestamp DateTime @default(now())
+  deviceId  String
+  device    Device   @relation(fields: [deviceId], references: [id])
+}
+
+enum UserRole {
+  User
+}
+
+enum DeviceStatus {
+  Active
+  Inactive
+}
+
+enum DeviceType {
+  Light
+  Mobile
+}
