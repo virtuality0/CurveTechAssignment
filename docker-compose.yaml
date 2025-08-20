@@ -1,0 +1,35 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: curvetech
+    environment:
+      DATABASE_URL: postgresql://postgres:password@db:5432/curvetech
+    ports:
+      - 3000:3000
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    image: postgres:17-alpine
+    container_name: db
+    restart: always 
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: curvetech
+    ports:
+      - 5432:5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d curvetech"]
+      interval: 5s
+      timeout: 5s
+      retries: 5 
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

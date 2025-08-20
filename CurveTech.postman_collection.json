@@ -1,0 +1,1142 @@
+{
+	"info": {
+		"_postman_id": "551b23f0-e05c-4098-9294-7fd82639d511",
+		"name": "CurveTech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43068754"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"ayush\", \n    \"email\" : \"ayush@gmail.com\",\n    \"password\" : \"Ayush@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/signUp",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"signUp"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SuccessfullSignUp",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"ayush\", \n    \"email\" : \"ayush@gmail.com\",\n    \"password\" : \"Ayush@123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/signUp",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"signUp"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "90"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5a-ajlyiSbquKS0mHnC6nk82zbvdDQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 19 Aug 2025 07:23:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User signed up successfully.\",\n    \"id\": \"cmei7wk9a0000s49l7bwvlbbd\"\n}"
+						},
+						{
+							"name": "400Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"ayush\", \n    \"email\" : \"ayush@gmail.com\",\n    \"password\" : \"Ayush@123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/signUp",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"signUp"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "103"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"67-0SM2L6Iqs6n5yY2FG3XCcwyCIp4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 19 Aug 2025 07:26:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"This email is associated with an existing account.\",\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+						}
+					]
+				},
+				{
+					"name": "SignIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"ayush@gmail.com\",\n    \"password\" : \"Ayush@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/signIn",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"signIn"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SignInSuccess",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"ayush@gmail.com\",\n    \"password\" : \"Ayush@123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/signIn",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"signIn"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "333"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"14d-fGoxqQuYBns24bziqgp+fG7CUEY\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 19 Aug 2025 13:23:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": \"true\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtZWk3d2s5YTAwMDBzNDlsN2J3dmxiYmQiLCJlbWFpbCI6ImF5dXNoQGdtYWlsLmNvbSIsImlhdCI6MTc1NTYwOTgyNSwiZXhwIjoxNzU1Njk2MjI1fQ.3S4FhQGy8hpeJy7zcdqOU0c7gVNx11oPd5ZrMPxHbIQ\",\n    \"user\": {\n        \"id\": \"cmei7wk9a0000s49l7bwvlbbd\",\n        \"name\": \"ayush\",\n        \"email\": \"ayush@gmail.com\",\n        \"role\": \"User\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Device",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtZWk3d2s5YTAwMDBzNDlsN2J3dmxiYmQiLCJlbWFpbCI6ImF5dXNoQGdtYWlsLmNvbSIsImlhdCI6MTc1NTYwOTgyNSwiZXhwIjoxNzU1Njk2MjI1fQ.3S4FhQGy8hpeJy7zcdqOU0c7gVNx11oPd5ZrMPxHbIQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\" : \"Light\", \n    \"status\" : \"Active\", \n    \"name\" : \"Device-1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/devices",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"devices"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register-Successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtZWk3d2s5YTAwMDBzNDlsN2J3dmxiYmQiLCJlbWFpbCI6ImF5dXNoQGdtYWlsLmNvbSIsImlhdCI6MTc1NTYwOTgyNSwiZXhwIjoxNzU1Njk2MjI1fQ.3S4FhQGy8hpeJy7zcdqOU0c7gVNx11oPd5ZrMPxHbIQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\" : \"Light\", \n    \"status\" : \"Active\", \n    \"name\" : \"Device-1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/devices",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"devices"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "195"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c3-NCKpJufTViRH4cChnrmVOEQnvSo\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 19 Aug 2025 15:13:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": \"true\",\n    \"device\": {\n        \"id\": \"cmeionzr10001s4q6nlbx41yg\",\n        \"name\": \"Device-1\",\n        \"type\": \"Light\",\n        \"status\": \"Active\",\n        \"last_active_at\": \"2025-08-19T15:13:04.189Z\",\n        \"ownerId\": \"cmei7wk9a0000s49l7bwvlbbd\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "GetByFilter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtZWk3d2s5YTAwMDBzNDlsN2J3dmxiYmQiLCJlbWFpbCI6ImF5dXNoQGdtYWlsLmNvbSIsImlhdCI6MTc1NTYwOTgyNSwiZXhwIjoxNzU1Njk2MjI1fQ.3S4FhQGy8hpeJy7zcdqOU0c7gVNx11oPd5ZrMPxHbIQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/devices/?status=&type=",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"devices",
+								""
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": ""
+								},
+								{
+									"key": "type",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtZWk3d2s5YTAwMDBzNDlsN2J3dmxiYmQiLCJlbWFpbCI6ImF5dXNoQGdtYWlsLmNvbSIsImlhdCI6MTc1NTYwOTgyNSwiZXhwIjoxNzU1Njk2MjI1fQ.3S4FhQGy8hpeJy7zcdqOU0c7gVNx11oPd5ZrMPxHbIQ",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/devices/?status=&type=",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"devices",
+										""
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": ""
+										},
+										{
+											"key": "type",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "371"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"173-E1Tv5c8kr9I1jLh3/731psEJ2x4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 19 Aug 2025 16:05:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": \"true\",\n    \"devices\": [\n        {\n            \"id\": \"cmeionzr10001s4q6nlbx41yg\",\n            \"name\": \"Device-1\",\n            \"type\": \"Light\",\n            \"status\": \"Active\",\n            \"owner_id\": \"cmei7wk9a0000s49l7bwvlbbd\",\n            \"last_active_at\": \"2025-08-19T15:13:04.189Z\"\n        },\n        {\n            \"id\": \"cmeiqh9bg0001s4jmb6p5n8bp\",\n            \"name\": \"Device-2\",\n            \"type\": \"Mobile\",\n            \"status\": \"Inactive\",\n            \"owner_id\": \"cmei7wk9a0000s49l7bwvlbbd\",\n            \"last_active_at\": \"2025-08-19T16:03:49.226Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "GetLogsByLimit",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtZWk3d2s5YTAwMDBzNDlsN2J3dmxiYmQiLCJlbWFpbCI6ImF5dXNoQGdtYWlsLmNvbSIsImlhdCI6MTc1NTYwOTgyNSwiZXhwIjoxNzU1Njk2MjI1fQ.3S4FhQGy8hpeJy7zcdqOU0c7gVNx11oPd5ZrMPxHbIQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/devices/:id/logs?limit=10",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"devices",
+								":id",
+								"logs"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "cmeiqh9bg0001s4jmb6p5n8bp"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtZWk3d2s5YTAwMDBzNDlsN2J3dmxiYmQiLCJlbWFpbCI6ImF5dXNoQGdtYWlsLmNvbSIsImlhdCI6MTc1NTYwOTgyNSwiZXhwIjoxNzU1Njk2MjI1fQ.3S4FhQGy8hpeJy7zcdqOU0c7gVNx11oPd5ZrMPxHbIQ",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/devices/:id/logs?limit=10",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"devices",
+										":id",
+										"logs"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "cmeiqh9bg0001s4jmb6p5n8bp"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "247"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f7-6961YfiTWWJPFn3e9ppWw6h0gxk\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Aug 2025 06:17:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": \"true\",\n    \"logs\": [\n        {\n            \"id\": \"cmejkwdfq0003s4q0ij4hemlt\",\n            \"value\": 5,\n            \"event\": \"units_consumed\",\n            \"timestamp\": \"2025-08-20T06:15:22.886Z\"\n        },\n        {\n            \"id\": \"cmejkv6500001s4q089yssdb0\",\n            \"value\": 2.5,\n            \"event\": \"units_consumed\",\n            \"timestamp\": \"2025-08-20T06:14:26.772Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Heartbeat",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtZWk3d2s5YTAwMDBzNDlsN2J3dmxiYmQiLCJlbWFpbCI6ImF5dXNoQGdtYWlsLmNvbSIsImlhdCI6MTc1NTYwOTgyNSwiZXhwIjoxNzU1Njk2MjI1fQ.3S4FhQGy8hpeJy7zcdqOU0c7gVNx11oPd5ZrMPxHbIQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\" : \"Active\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/devices/:id/heartbeat",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"devices",
+								":id",
+								"heartbeat"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "cmeionzr10001s4q6nlbx41yg"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtZWk3d2s5YTAwMDBzNDlsN2J3dmxiYmQiLCJlbWFpbCI6ImF5dXNoQGdtYWlsLmNvbSIsImlhdCI6MTc1NTYwOTgyNSwiZXhwIjoxNzU1Njk2MjI1fQ.3S4FhQGy8hpeJy7zcdqOU0c7gVNx11oPd5ZrMPxHbIQ",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/devices/?status=&type=",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"devices",
+										""
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": ""
+										},
+										{
+											"key": "type",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "371"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"173-E1Tv5c8kr9I1jLh3/731psEJ2x4\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 19 Aug 2025 16:05:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": \"true\",\n    \"devices\": [\n        {\n            \"id\": \"cmeionzr10001s4q6nlbx41yg\",\n            \"name\": \"Device-1\",\n            \"type\": \"Light\",\n            \"status\": \"Active\",\n            \"owner_id\": \"cmei7wk9a0000s49l7bwvlbbd\",\n            \"last_active_at\": \"2025-08-19T15:13:04.189Z\"\n        },\n        {\n            \"id\": \"cmeiqh9bg0001s4jmb6p5n8bp\",\n            \"name\": \"Device-2\",\n            \"type\": \"Mobile\",\n            \"status\": \"Inactive\",\n            \"owner_id\": \"cmei7wk9a0000s49l7bwvlbbd\",\n            \"last_active_at\": \"2025-08-19T16:03:49.226Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtZWk3d2s5YTAwMDBzNDlsN2J3dmxiYmQiLCJlbWFpbCI6ImF5dXNoQGdtYWlsLmNvbSIsImlhdCI6MTc1NTYwOTgyNSwiZXhwIjoxNzU1Njk2MjI1fQ.3S4FhQGy8hpeJy7zcdqOU0c7gVNx11oPd5ZrMPxHbIQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\" : \"Active\",\n    \"name\" : \"ayush's device\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/devices/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"devices",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "cmeionzr10001s4q6nlbx41yg"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtZWk3d2s5YTAwMDBzNDlsN2J3dmxiYmQiLCJlbWFpbCI6ImF5dXNoQGdtYWlsLmNvbSIsImlhdCI6MTc1NTYwOTgyNSwiZXhwIjoxNzU1Njk2MjI1fQ.3S4FhQGy8hpeJy7zcdqOU0c7gVNx11oPd5ZrMPxHbIQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\" : \"Active\",\n    \"name\" : \"ayush's device\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/devices/:id",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"devices",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "cmeionzr10001s4q6nlbx41yg"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b-C6DdHOQjibI7Dp5eOWvq+Dr5o64\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 19 Aug 2025 16:08:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": \"true\",\n    \"message\": \"Device updated successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtZWk3d2s5YTAwMDBzNDlsN2J3dmxiYmQiLCJlbWFpbCI6ImF5dXNoQGdtYWlsLmNvbSIsImlhdCI6MTc1NTYwOTgyNSwiZXhwIjoxNzU1Njk2MjI1fQ.3S4FhQGy8hpeJy7zcdqOU0c7gVNx11oPd5ZrMPxHbIQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/devices/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"devices",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "cmeionzr10001s4q6nlbx41yg"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtZWk3d2s5YTAwMDBzNDlsN2J3dmxiYmQiLCJlbWFpbCI6ImF5dXNoQGdtYWlsLmNvbSIsImlhdCI6MTc1NTYwOTgyNSwiZXhwIjoxNzU1Njk2MjI1fQ.3S4FhQGy8hpeJy7zcdqOU0c7gVNx11oPd5ZrMPxHbIQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\" : \"Active\",\n    \"name\" : \"ayush's device\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/devices/:id",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"devices",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "cmeionzr10001s4q6nlbx41yg"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b-C6DdHOQjibI7Dp5eOWvq+Dr5o64\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 19 Aug 2025 16:08:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": \"true\",\n    \"message\": \"Device updated successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "CreateLog",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtZWk3d2s5YTAwMDBzNDlsN2J3dmxiYmQiLCJlbWFpbCI6ImF5dXNoQGdtYWlsLmNvbSIsImlhdCI6MTc1NTYwOTgyNSwiZXhwIjoxNzU1Njk2MjI1fQ.3S4FhQGy8hpeJy7zcdqOU0c7gVNx11oPd5ZrMPxHbIQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"event\" : \"units_consumed\", \n    \"value\" : 5.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/devices/:id/logs",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"devices",
+								":id",
+								"logs"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "cmeiqh9bg0001s4jmb6p5n8bp"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CreateLogSuccess",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtZWk3d2s5YTAwMDBzNDlsN2J3dmxiYmQiLCJlbWFpbCI6ImF5dXNoQGdtYWlsLmNvbSIsImlhdCI6MTc1NTYwOTgyNSwiZXhwIjoxNzU1Njk2MjI1fQ.3S4FhQGy8hpeJy7zcdqOU0c7gVNx11oPd5ZrMPxHbIQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"event\" : \"units_consumed\", \n    \"value\" : 2.5\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/devices/:id/logs",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"devices",
+										":id",
+										"logs"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "cmeiqh9bg0001s4jmb6p5n8bp"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"38-A00bbyYDkLEr/qctI5DtQcpCHWw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Aug 2025 06:14:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": \"true\",\n    \"message\": \"Log created successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "GetAggregatedUsage",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtZWk3d2s5YTAwMDBzNDlsN2J3dmxiYmQiLCJlbWFpbCI6ImF5dXNoQGdtYWlsLmNvbSIsImlhdCI6MTc1NTYwOTgyNSwiZXhwIjoxNzU1Njk2MjI1fQ.3S4FhQGy8hpeJy7zcdqOU0c7gVNx11oPd5ZrMPxHbIQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/devices/:id/usage?range=24h",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"devices",
+								":id",
+								"usage"
+							],
+							"query": [
+								{
+									"key": "range",
+									"value": "24h"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "cmeiqh9bg0001s4jmb6p5n8bp"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtZWk3d2s5YTAwMDBzNDlsN2J3dmxiYmQiLCJlbWFpbCI6ImF5dXNoQGdtYWlsLmNvbSIsImlhdCI6MTc1NTYwOTgyNSwiZXhwIjoxNzU1Njk2MjI1fQ.3S4FhQGy8hpeJy7zcdqOU0c7gVNx11oPd5ZrMPxHbIQ",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/devices/:id/usage?range=24h",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"devices",
+										":id",
+										"usage"
+									],
+									"query": [
+										{
+											"key": "range",
+											"value": "24h"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "cmeiqh9bg0001s4jmb6p5n8bp"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "85"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"55-oo/7nRRjXtTIDqKtC48DjewVNbM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 Aug 2025 06:20:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": \"true\",\n    \"device_id\": \"cmeiqh9bg0001s4jmb6p5n8bp\",\n    \"total_units_last_24h\": 7.5\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:3000",
+			"type": "default"
+		}
+	]
+}
