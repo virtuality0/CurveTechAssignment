@@ -10,6 +10,7 @@ import { SignInDto } from './dtos/Request/signInRequest.dto';
 import { SignupResponseDto } from './dtos/Response/signUpResponse.dto';
 import { SignInResponseDto } from './dtos/Response/signInResponse.dto';
 import { ApiBearerAuth } from '@nestjs/swagger';
+import { seconds, Throttle } from '@nestjs/throttler';
 
 @ApiBearerAuth('access-token')
 @Controller('auth')
@@ -19,6 +20,7 @@ export class AuthController {
     private readonly jwtService: JwtService,
   ) {}
 
+  @Throttle({ default: { limit: 10, ttl: seconds(30) } }) // custom ratelimit values for signUp endpoint
   @HttpCode(HttpStatus.CREATED)
   @Post('signUp')
   signUp(
