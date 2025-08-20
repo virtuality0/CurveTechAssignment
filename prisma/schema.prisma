@@ -24,7 +24,7 @@ model Device {
   type           DeviceType
   status         DeviceStatus
   owner_id       String
-  user           User         @relation(fields: [owner_id], references: [id])
+  user           User         @relation(fields: [owner_id], references: [id], onDelete: Cascade)
   last_active_at DateTime     @default(now())
   logs           Log[]
 
@@ -32,12 +32,12 @@ model Device {
 }
 
 model Log {
-  id        String   @id @default(cuid())
-  event     String
-  value     String?
-  timestamp DateTime @default(now())
+  id        String    @id @default(cuid())
+  event     EventType
+  value     Float?
+  timestamp DateTime  @default(now())
   deviceId  String
-  device    Device   @relation(fields: [deviceId], references: [id])
+  device    Device    @relation(fields: [deviceId], references: [id], onDelete: Cascade)
 }
 
 enum UserRole {
@@ -52,4 +52,8 @@ enum DeviceStatus {
 enum DeviceType {
   Light
   Mobile
+}
+
+enum EventType {
+  units_consumed
 }

@@ -14,9 +14,3 @@ export const registerDeviceSchema = z.object({
 
   type: z.enum(DeviceType, { message: 'Please enter a valid device type' }),
 });
-
-export type registerDeviceDto = z.infer<typeof registerDeviceSchema>;
-
-export type updateDeviceHeartbeatDto = Pick<registerDeviceDto, 'status'>;
-
-export type updateDeviceDto = Partial<registerDeviceDto>;

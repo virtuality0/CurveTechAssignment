@@ -7,5 +7,3 @@ export const signInSchema = z.object({
     .trim()
     .min(8, { message: 'Password should be atleast 8 characters long.' }),
 });
-
-export type signInDto = z.infer<typeof signInSchema>;

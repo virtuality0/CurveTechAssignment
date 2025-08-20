@@ -1,15 +1,15 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma.service';
-import { signUpDto } from 'src/zodSchemas/signUp';
-import { signInDto } from 'src/zodSchemas/signIn';
 import bcrypt from 'bcrypt';
 import { UserRole } from '@prisma/client';
+import { SignUpDto } from './dtos/Request/signUpRequest.dto';
+import { SignInDto } from './dtos/Request/signInRequest.dto';
 
 @Injectable()
 export class AuthService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async signUp(signUpDto: signUpDto) {
+  async signUp(signUpDto: SignUpDto) {
     const existingUser = await this.prisma.user.findFirst({
       where: {
         email: signUpDto.email,
@@ -36,13 +36,13 @@ export class AuthService {
     });
 
     return {
-      success: true,
+      success: 'true',
       message: 'User signed up successfully.',
       id: user.id,
     };
   }
 
-  async signIn(signInDto: signInDto) {
+  async signIn(signInDto: SignInDto) {
     const existingUser = await this.prisma.user.findFirst({
       where: {
         email: signInDto.email,

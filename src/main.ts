@@ -13,6 +13,16 @@ async function bootstrap() {
   const swaggerConfig = new DocumentBuilder()
     .setTitle('CurveTech')
     .setVersion('1.1')
+    .addBearerAuth(
+      {
+        type: 'http',
+        scheme: 'bearer',
+        bearerFormat: 'JWT',
+        name: 'Authorization',
+        in: 'header',
+      },
+      'access-token',
+    )
     .build();
 
   const swaggerFactory = () => SwaggerModule.createDocument(app, swaggerConfig);

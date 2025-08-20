@@ -1,11 +1,17 @@
 import { HttpCode, Body, Controller, HttpStatus, Post } from '@nestjs/common';
 import { ZodValidationPipe } from '../pipes/validation.pipe';
-import { type signUpDto, signUpSchema } from 'src/zodSchemas/signUp';
+import { signUpSchema } from 'src/zodSchemas/signUp';
 import { AuthService } from './auth.service';
-import { type signInDto, signInSchema } from 'src/zodSchemas/signIn';
+import { signInSchema } from 'src/zodSchemas/signIn';
 import { JwtService } from '@nestjs/jwt';
 import { JwtPayload } from 'src/types/jwtPayload';
+import { SignUpDto } from './dtos/Request/signUpRequest.dto';
+import { SignInDto } from './dtos/Request/signInRequest.dto';
+import { SignupResponseDto } from './dtos/Response/signUpResponse.dto';
+import { SignInResponseDto } from './dtos/Response/signInResponse.dto';
+import { ApiBearerAuth } from '@nestjs/swagger';
 
+@ApiBearerAuth('access-token')
 @Controller('auth')
 export class AuthController {
   constructor(
@@ -15,14 +21,16 @@ export class AuthController {
 
   @HttpCode(HttpStatus.CREATED)
   @Post('signUp')
-  signUp(@Body(new ZodValidationPipe(signUpSchema)) userSignUpDto: signUpDto) {
+  signUp(
+    @Body(new ZodValidationPipe(signUpSchema)) userSignUpDto: SignUpDto,
+  ): Promise<SignupResponseDto> {
     return this.authService.signUp(userSignUpDto);
   }
 
   @Post('signIn')
   async signIn(
-    @Body(new ZodValidationPipe(signInSchema)) userSignInDto: signInDto,
-  ) {
+    @Body(new ZodValidationPipe(signInSchema)) userSignInDto: SignInDto,
+  ): Promise<SignInResponseDto> {
     const User = await this.authService.signIn(userSignInDto);
 
     const payload: JwtPayload = {
